@@ -47,6 +47,11 @@ export interface Translations {
     debug: string;
     resources: string;
     docs: string;
+
+  navGroupChat: string;
+  navGroupControl: string;
+  navGroupAgent: string;
+  navGroupSettings: string;
   };
 
   // 概览页面
@@ -198,6 +203,11 @@ export const translations: Record<Locale, Translations> = {
       debug: 'Debug',
       resources: 'Resources',
       docs: 'Docs',
+      navGroupChat: 'Chat',
+      navGroupControl: 'Control',
+      navGroupAgent: 'Agent',
+      navGroupSettings: 'Settings',
+    
     },
     overview: {
       title: 'Overview',
@@ -327,6 +337,10 @@ export const translations: Record<Locale, Translations> = {
       debug: '调试',
       resources: '资源',
       docs: '文档',
+      navGroupChat: '聊天',
+      navGroupControl: '控制',
+      navGroupAgent: '代理',
+      navGroupSettings: '设置',
     },
     overview: {
       title: '概览',

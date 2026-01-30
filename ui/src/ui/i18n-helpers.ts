@@ -48,13 +48,13 @@ export function getSubtitleForTab(tab: string, t: Translations): string {
  * 获取导航组的标签
  */
 export function getNavGroupLabel(groupLabel: string, t: Translations): string {
-  const labels: Record<string, string> = {
-    'Chat': t.nav.chat,
-    'Control': 'Control',
-    'Agent': 'Agent',
-    'Settings': t.nav.config,
-    'Resources': t.nav.resources,
+  const labels: Record<string, keyof Translations['nav']> = {
+    'Chat': 'navGroupChat',
+    'Control': 'navGroupControl',
+    'Agent': 'navGroupAgent',
+    'Settings': 'navGroupSettings',
   };
   
-  return labels[groupLabel] || groupLabel;
+  const key = labels[groupLabel];
+  return key ? t.nav[key] : groupLabel;
 }
