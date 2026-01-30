@@ -278,3 +278,24 @@ function renderMonitorIcon() {
     </svg>
   `;
 }
+
+export function renderLocaleSwitcher(state: AppViewState) {
+  const { locale } = state.i18n;
+  
+  return html`
+    <div class=locale-switcher>
+      <select
+        .value=${locale}
+        @change=${(e: Event) => {
+          const select = e.target as HTMLSelectElement;
+          state.i18n.locale = select.value as 'en' | 'zh';
+        }}
+        title=Switch language / 切换语言
+        aria-label=Language selector
+      >
+        <option value=en>🇺🇸 English</option>
+        <option value=zh>🇨🇳 中文</option>
+      </select>
+    </div>
+  `;
+}

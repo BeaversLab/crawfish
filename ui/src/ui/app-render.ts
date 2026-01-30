@@ -13,6 +13,7 @@ import {
 } from "./navigation";
 import { getTitleForTab, getSubtitleForTab, getNavGroupLabel } from "./i18n-helpers";
 import { icons } from "./icons";
+import { renderLocaleSwitcher } from "./app-render.helpers";
 import type { UiSettings } from "./storage";
 import type { ThemeMode } from "./theme";
 import type { ThemeTransitionContext } from "./theme-transition";
@@ -52,7 +53,7 @@ import {
   rotateDeviceToken,
 } from "./controllers/devices";
 import { renderSkills } from "./views/skills";
-import { renderChatControls, renderTab, renderThemeToggle } from "./app-render.helpers";
+import { renderChatControls, renderTab, renderThemeToggle, renderLocaleSwitcher } from "./app-render.helpers";
 import { loadChannels } from "./controllers/channels";
 import { loadPresence } from "./controllers/presence";
 import { deleteSession, loadSessions, patchSession } from "./controllers/sessions";
@@ -146,6 +147,7 @@ export function renderApp(state: AppViewState) {
             <span class="mono">${state.connected ? `${state.i18n.t.topbar.healthOk}` : `${state.i18n.t.topbar.healthOffline}`}</span>
           </div>
           ${renderThemeToggle(state)}
+          ${renderLocaleSwitcher(state)}
         </div>
       </header>
       <aside class="nav ${state.settings.navCollapsed ? "nav--collapsed" : ""}">
