@@ -11,6 +11,7 @@ import {
   titleForTab,
   type Tab,
 } from "./navigation";
+import { getTitleForTab, getSubtitleForTab, getNavGroupLabel } from "./i18n-helpers";
 import { icons } from "./icons";
 import type { UiSettings } from "./storage";
 import type { ThemeMode } from "./theme";
@@ -123,8 +124,8 @@ export function renderApp(state: AppViewState) {
                 ...state.settings,
                 navCollapsed: !state.settings.navCollapsed,
               })}
-            title="${state.settings.navCollapsed ? "Expand sidebar" : "Collapse sidebar"}"
-            aria-label="${state.settings.navCollapsed ? "Expand sidebar" : "Collapse sidebar"}"
+            title="${state.settings.navCollapsed ? `${state.i18n.t.topbar.expandSidebar}` : `${state.i18n.t.topbar.collapseSidebar}`}"
+            aria-label="${state.settings.navCollapsed ? `${state.i18n.t.topbar.expandSidebar}` : `${state.i18n.t.topbar.collapseSidebar}`}"
           >
             <span class="nav-collapse-toggle__icon">${icons.menu}</span>
           </button>
@@ -133,16 +134,16 @@ export function renderApp(state: AppViewState) {
               <img src="https://mintcdn.com/clawdhub/4rYvG-uuZrMK_URE/assets/pixel-lobster.svg?fit=max&auto=format&n=4rYvG-uuZrMK_URE&q=85&s=da2032e9eac3b5d9bfe7eb96ca6a8a26" alt="OpenClaw" />
             </div>
             <div class="brand-text">
-              <div class="brand-title">OPENCLAW</div>
-              <div class="brand-sub">Gateway Dashboard</div>
+              <div class="brand-title">${state.i18n.t.topbar.brandTitle}</div>
+              <div class="brand-sub">${state.i18n.t.topbar.brandSub}</div>
             </div>
           </div>
         </div>
         <div class="topbar-status">
           <div class="pill">
             <span class="statusDot ${state.connected ? "ok" : ""}"></span>
-            <span>Health</span>
-            <span class="mono">${state.connected ? "OK" : "Offline"}</span>
+            <span>${state.i18n.t.topbar.health}</span>
+            <span class="mono">${state.connected ? `${state.i18n.t.topbar.healthOk}` : `${state.i18n.t.topbar.healthOffline}`}</span>
           </div>
           ${renderThemeToggle(state)}
         </div>
@@ -176,7 +177,7 @@ export function renderApp(state: AppViewState) {
         })}
         <div class="nav-group nav-group--links">
           <div class="nav-label nav-label--static">
-            <span class="nav-label__text">Resources</span>
+            <span class="nav-label__text">${state.i18n.t.nav.resources}</span>
           </div>
           <div class="nav-group__items">
             <a
@@ -187,7 +188,7 @@ export function renderApp(state: AppViewState) {
               title="Docs (opens in new tab)"
             >
               <span class="nav-item__icon" aria-hidden="true">${icons.book}</span>
-              <span class="nav-item__text">Docs</span>
+              <span class="nav-item__text">${state.i18n.t.nav.docs}</span>
             </a>
           </div>
         </div>

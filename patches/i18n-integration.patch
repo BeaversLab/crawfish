@@ -1,0 +1,11 @@
+--- a/ui/src/ui/app.ts
++++ b/ui/src/ui/app.ts
+@@ -6,6 +6,8 @@ import type { GatewayBrowserClient, GatewayHelloOk } from ./gateway;
+ import { resolveInjectedAssistantIdentity } from ./assistant-identity;
+ import { loadSettings, type UiSettings } from ./storage;
+ import { renderApp } from ./app-render;
++import { createI18n } from ../i18n;
++import type { Locale } from ../i18n;
+ import type { Tab } from ./navigation;
+ import type { ResolvedTheme, ThemeMode } from ./theme;
+ import type {

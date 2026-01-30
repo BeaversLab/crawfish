@@ -1,0 +1,32 @@
+--- a/ui/src/ui/navigation.ts
++++ b/ui/src/ui/navigation.ts
+@@ -149,7 +149,9 @@ export function iconForTab(tab: Tab): IconName {
+   }
+ }
+ 
+-export function titleForTab(tab: Tab) {
++export function titleForTab(tab: Tab, t?: any) {
++  const translations = t?.nav || {};
++  const defaults: Record<Tab, string> = {
+   switch (tab) {
+     case overview:
+       return Overview;
+@@ -175,8 +177,10 @@ export function titleForTab(tab: Tab) {
+       return Control;
+   }
+ }
++  return translations[tab] || defaults[tab];
++}
+ 
+-export function subtitleForTab(tab: Tab) {
++export function subtitleForTab(tab: Tab, t?: any) {
++  const translations = t?.nav || {};
+   switch (tab) {
+     case overview:
+       return Gateway status, entry points, and a fast health read.;
+@@ -203,5 +207,6 @@ export function subtitleForTab(tab: Tab) {
+     default:
+       return ;
+   }
++  return translations[`${tab}Subtitle`] || "";
+ }
