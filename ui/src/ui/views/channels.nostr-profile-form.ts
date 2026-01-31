@@ -5,6 +5,7 @@
  */
 
 import { html, nothing, type TemplateResult } from "lit";
+import { t } from "../../i18n";
 
 import type { NostrProfile as NostrProfileType } from "../types";
 

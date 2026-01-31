@@ -1,4 +1,5 @@
 import type {
+import { t } from "../../i18n";
     ChannelAccountSnapshot,
     ChannelsStatusSnapshot,
     ConfigUiHints,

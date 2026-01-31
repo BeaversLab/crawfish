@@ -1,4 +1,5 @@
 import { pathKey, schemaType, type JsonSchema } from "./config-form.shared";
+import { t } from "../../i18n";
 
 export type ConfigSchemaAnalysis = {
   schema: JsonSchema | null;

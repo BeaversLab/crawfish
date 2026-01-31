@@ -1,4 +1,5 @@
 import type { ConfigUiHints } from "../types";
+import { t } from "../../i18n";
 
 export type JsonSchema = {
   type?: string | string[];
