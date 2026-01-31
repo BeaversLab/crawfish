@@ -277,10 +277,7 @@ export interface Translations {
 
   // 节点详细
   nodesDetail: {
-    title: string;
-    subtitle: string;
-    refresh: string;
-    loading: string;
+    pairedDevicesLinks: string;
     noNodes: string;
     devices: string;
     devicesSub: string;
@@ -289,73 +286,28 @@ export interface Translations {
     noPairedDevices: string;
     approve: string;
     reject: string;
-    rotate: string;
-    revoke: string;
-    tokensNone: string;
-    tokens: string;
-    active: string;
-    revoked: string;
+    repair: string;
+    requested: string;
+    roles: string;
+    scopes: string;
     bindings: string;
     bindingsSub: string;
-    save: string;
-    saving: string;
-    switchToFormMode: string;
-    loadConfigToEdit: string;
-    loadConfig: string;
-    defaultBinding: string;
-    defaultBindingDesc: string;
-    node: string;
-    anyNode: string;
-    noNodesSystemRun: string;
-    noAgents: string;
-    binding: string;
-    useDefault: string;
     defaultAgent: string;
-    agent: string;
-    usesDefault: string;
-    override: string;
+    bindDefault: string;
+    bindAgent: string;
+    saveBindings: string;
     execApprovals: string;
     execApprovalsSub: string;
-    loadExecApprovals: string;
-    loadApprovals: string;
-    target: string;
-    targetDesc: string;
-    host: string;
     gateway: string;
-    selectNode: string;
-    noNodesExecApprovals: string;
-    scope: string;
-    defaults: string;
-    security: string;
-    securityDesc: string;
-    defaultPrefix: string;
-    mode: string;
-    useDefaultMode: string;
-    ask: string;
-    askDesc: string;
-    askFallback: string;
-    askFallbackDesc: string;
-    fallback: string;
-    autoAllowSkills: string;
-    autoAllowSkillsDesc: string;
-    autoAllowSkillsDefault: string;
-    autoAllowSkillsOverride: string;
-    enabled: string;
-    useDefaultBtn: string;
-    allowlist: string;
-    allowlistSub: string;
-    addPattern: string;
-    noAllowlistEntries: string;
-    newPattern: string;
-    lastUsed: string;
-    never: string;
-    pattern: string;
-    remove: string;
-    statusPaired: string;
-    statusUnpaired: string;
-    statusConnected: string;
-    statusOffline: string;
-    na: string;
+    node: string;
+    selectAgent: string;
+    addRule: string;
+    removeRule: string;
+    saveRules: string;
+    noRules: string;
+    allowed: string;
+    denied: string;
+    target: string;
   };
 
   // 日志详细
@@ -643,10 +595,7 @@ export const translations: Record<Locale, Translations> = {
       os: 'os',
     },
     nodesDetail: {
-      title: 'Nodes',
-      subtitle: 'Paired devices and live links.',
-      refresh: 'Refresh',
-      loading: 'Loading…',
+      pairedDevicesLinks: 'Paired devices and live links.',
       noNodes: 'No nodes found.',
       devices: 'Devices',
       devicesSub: 'Pairing requests + role tokens.',
@@ -655,73 +604,28 @@ export const translations: Record<Locale, Translations> = {
       noPairedDevices: 'No paired devices.',
       approve: 'Approve',
       reject: 'Reject',
-      rotate: 'Rotate',
-      revoke: 'Revoke',
-      tokensNone: 'Tokens: none',
-      tokens: 'Tokens',
-      active: 'active',
-      revoked: 'revoked',
-      bindings: 'Exec node binding',
-      bindingsSub: 'Pin agents to a specific node when using exec host=node.',
-      save: 'Save',
-      saving: 'Saving…',
-      switchToFormMode: 'Switch the Config tab to Form mode to edit bindings here.',
-      loadConfigToEdit: 'Load config to edit bindings.',
-      loadConfig: 'Load config',
-      defaultBinding: 'Default binding',
-      defaultBindingDesc: 'Used when agents do not override a node binding.',
-      node: 'Node',
-      anyNode: 'Any node',
-      noNodesSystemRun: 'No nodes with system.run available.',
-      noAgents: 'No agents found.',
-      binding: 'Binding',
-      useDefault: 'Use default',
-      defaultAgent: 'default agent',
-      agent: 'agent',
-      usesDefault: 'uses default ({0})',
-      override: 'override: {0}',
-      execApprovals: 'Exec approvals',
-      execApprovalsSub: 'Allowlist and approval policy for exec host=gateway/node.',
-      loadExecApprovals: 'Load exec approvals to edit allowlists.',
-      loadApprovals: 'Load approvals',
-      target: 'Target',
-      targetDesc: 'Gateway edits local approvals; node edits the selected node.',
-      host: 'Host',
+      repair: 'repair',
+      requested: 'requested',
+      roles: 'roles',
+      scopes: 'scopes',
+      bindings: 'Agent Bindings',
+      bindingsSub: 'Bind agents to specific nodes.',
+      defaultAgent: 'Default Agent',
+      bindDefault: 'Bind Default',
+      bindAgent: 'Bind Agent',
+      saveBindings: 'Save Bindings',
+      execApprovals: 'Exec Approvals',
+      execApprovalsSub: 'Approve or deny exec requests.',
       gateway: 'Gateway',
-      selectNode: 'Select node',
-      noNodesExecApprovals: 'No nodes advertise exec approvals yet.',
-      scope: 'Scope',
-      defaults: 'Defaults',
-      security: 'Security',
-      securityDesc: 'Default security mode.',
-      defaultPrefix: 'Default: {0}',
-      mode: 'Mode',
-      useDefaultMode: 'Use default ({0})',
-      ask: 'Ask',
-      askDesc: 'Default prompt policy.',
-      askFallback: 'Ask fallback',
-      askFallbackDesc: 'Applied when the UI prompt is unavailable.',
-      fallback: 'Fallback',
-      autoAllowSkills: 'Auto-allow skill CLIs',
-      autoAllowSkillsDesc: 'Allow skill executables listed by the Gateway.',
-      autoAllowSkillsDefault: 'Using default ({0}).',
-      autoAllowSkillsOverride: 'Override ({0}).',
-      enabled: 'Enabled',
-      useDefaultBtn: 'Use default',
-      allowlist: 'Allowlist',
-      allowlistSub: 'Case-insensitive glob patterns.',
-      addPattern: 'Add pattern',
-      noAllowlistEntries: 'No allowlist entries yet.',
-      newPattern: 'New pattern',
-      lastUsed: 'Last used: {0}',
-      never: 'never',
-      pattern: 'Pattern',
-      remove: 'Remove',
-      statusPaired: 'paired',
-      statusUnpaired: 'unpaired',
-      statusConnected: 'connected',
-      statusOffline: 'offline',
-      na: 'n/a',
+      node: 'Node',
+      selectAgent: 'Select agent',
+      addRule: 'Add rule',
+      removeRule: 'Remove rule',
+      saveRules: 'Save rules',
+      noRules: 'No rules configured.',
+      allowed: 'Allowed',
+      denied: 'Denied',
+      target: 'Target',
     },
     logsDetail: {
       gatewayFileLogs: 'Gateway file logs (JSONL).',
@@ -1002,6 +906,39 @@ export const translations: Record<Locale, Translations> = {
       config: '配置',
       os: '操作系统',
     },
+    nodesDetail: {
+      pairedDevicesLinks: '已配对设备和实时链接。',
+      noNodes: '未找到节点。',
+      devices: '设备',
+      devicesSub: '配对请求 + 角色令牌。',
+      pending: '待处理',
+      paired: '已配对',
+      noPairedDevices: '无已配对设备。',
+      approve: '批准',
+      reject: '拒绝',
+      repair: '修复',
+      requested: '请求时间',
+      roles: '角色',
+      scopes: '作用域',
+      bindings: '代理绑定',
+      bindingsSub: '将代理绑定到特定节点。',
+      defaultAgent: '默认代理',
+      bindDefault: '绑定默认',
+      bindAgent: '绑定代理',
+      saveBindings: '保存绑定',
+      execApprovals: '执行批准',
+      execApprovalsSub: '批准或拒绝执行请求。',
+      gateway: '网关',
+      node: '节点',
+      selectAgent: '选择代理',
+      addRule: '添加规则',
+      removeRule: '移除规则',
+      saveRules: '保存规则',
+      noRules: '未配置规则。',
+      allowed: '已允许',
+      denied: '已拒绝',
+      target: '目标',
+    },
     logsDetail: {
       gatewayFileLogs: '网关文件日志 (JSONL)。',
       exportFiltered: '导出已筛选',
@@ -1042,91 +979,9 @@ export const translations: Record<Locale, Translations> = {
       clientId: '客户端 ID',
       clientSecret: '客户端密钥',
     },
-    nodesDetail: {
-      title: '节点',
-      subtitle: '已配对设备和实时链接。',
-      refresh: '刷新',
-      loading: '加载中…',
-      noNodes: '未找到节点。',
-      devices: '设备',
-      devicesSub: '配对请求 + 角色令牌。',
-      pending: '待处理',
-      paired: '已配对',
-      noPairedDevices: '无已配对设备。',
-      approve: '批准',
-      reject: '拒绝',
-      rotate: '轮换',
-      revoke: '撤销',
-      tokensNone: '令牌：无',
-      tokens: '令牌',
-      active: '有效',
-      revoked: '已撤销',
-      bindings: '执行节点绑定',
-      bindingsSub: '将代理绑定到特定节点以使用 exec host=node。',
-      save: '保存',
-      saving: '保存中…',
-      switchToFormMode: '将配置选项卡切换到表单模式以在此处编辑绑定。',
-      loadConfigToEdit: '加载配置以编辑绑定。',
-      loadConfig: '加载配置',
-      defaultBinding: '默认绑定',
-      defaultBindingDesc: '当代理未覆盖节点绑定时使用。',
-      node: '节点',
-      anyNode: '任意节点',
-      noNodesSystemRun: '没有支持 system.run 的节点。',
-      noAgents: '未找到代理。',
-      binding: '绑定',
-      useDefault: '使用默认',
-      defaultAgent: '默认代理',
-      agent: '代理',
-      usesDefault: '使用默认（{0}）',
-      override: '覆盖：{0}',
-      execApprovals: '执行批准',
-      execApprovalsSub: 'exec host=gateway/node 的允许列表和批准策略。',
-      loadExecApprovals: '加载执行批准以编辑允许列表。',
-      loadApprovals: '加载批准',
-      target: '目标',
-      targetDesc: '网关编辑本地批准；节点编辑选定的节点。',
-      host: '主机',
-      gateway: '网关',
-      selectNode: '选择节点',
-      noNodesExecApprovals: '尚未有节点通告执行批准功能。',
-      scope: '范围',
-      defaults: '默认值',
-      security: '安全性',
-      securityDesc: '默认安全模式。',
-      defaultPrefix: '默认：{0}',
-      mode: '模式',
-      useDefaultMode: '使用默认（{0}）',
-      ask: '询问',
-      askDesc: '默认提示策略。',
-      askFallback: '询问后备',
-      askFallbackDesc: '当 UI 提示不可用时应用。',
-      fallback: '后备',
-      autoAllowSkills: '自动允许技能 CLI',
-      autoAllowSkillsDesc: '允许网关列出的技能可执行文件。',
-      autoAllowSkillsDefault: '使用默认（{0}）。',
-      autoAllowSkillsOverride: '覆盖（{0}）。',
-      enabled: '已启用',
-      useDefaultBtn: '使用默认',
-      allowlist: '允许列表',
-      allowlistSub: '不区分大小写的 glob 模式。',
-      addPattern: '添加模式',
-      noAllowlistEntries: '尚无允许列表条目。',
-      newPattern: '新模式',
-      lastUsed: '最后使用：{0}',
-      never: '从未',
-      pattern: '模式',
-      remove: '移除',
-      statusPaired: '已配对',
-      statusUnpaired: '未配对',
-      statusConnected: '已连接',
-      statusOffline: '离线',
-      na: '不可用',
-    },
   },
 };
 
 export function translate(locale: Locale): Translations {
   return translations[locale] ?? translations[DEFAULT_LOCALE];
 }
-
