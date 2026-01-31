@@ -341,7 +341,7 @@ export function renderConfig(props: ConfigProps) {
               ?disabled=${!canSave}
               @click=${props.onSave}
             >
-              ${props.saving ? "Saving…" : "Save"}
+              ${props.saving ? "Saving…" : t("common.save")}
             </button>
             <button
               class="btn btn--sm"

@@ -82,7 +82,7 @@ export function renderCron(props: CronProps) {
         </div>
         <div class="row" style="margin-top: 12px;">
           <button class="btn" ?disabled=${props.loading} @click=${props.onRefresh}>
-            ${props.loading ? "Refreshing…" : "Refresh"}
+            ${props.loading ? "Refreshing…" : t("common.refresh")}
           </button>
           ${props.error ? html`<span class="muted">${props.error}</span>` : nothing}
         </div>
@@ -397,7 +397,7 @@ function renderJob(job: CronJob, props: CronProps) {
               props.onToggle(job, !job.enabled);
             }}
           >
-            ${job.enabled ? "Disable" : "Enable"}
+            ${job.enabled ? "Disable" : t("cronDetail.enable")}
           </button>
           <button
             class="btn"

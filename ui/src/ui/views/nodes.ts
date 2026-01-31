@@ -65,7 +65,7 @@ export function renderNodes(props: NodesProps) {
           <div class="card-sub">${t("nodesDetail.subtitle")}</div>
         </div>
         <button class="btn" ?disabled=${props.loading} @click=${props.onRefresh}>
-          ${props.loading ? "Loading…" : "Refresh"}
+          ${props.loading ? t("common.loading") : t("common.refresh")}
         </button>
       </div>
       <div class="list" style="margin-top: 16px;">
@@ -89,7 +89,7 @@ function renderDevices(props: NodesProps) {
           <div class="card-sub">${t("nodesDetail.devicesSub")}</div>
         </div>
         <button class="btn" ?disabled=${props.devicesLoading} @click=${props.onDevicesRefresh}>
-          ${props.devicesLoading ? "Loading…" : "Refresh"}
+          ${props.devicesLoading ? t("common.loading") : t("common.refresh")}
         </button>
       </div>
       ${props.devicesError
@@ -447,7 +447,7 @@ function renderBindings(state: BindingState) {
           ?disabled=${state.disabled || !state.configDirty}
           @click=${state.onSave}
         >
-          ${state.configSaving ? "Saving…" : "Save"}
+          ${state.configSaving ? t("nodesDetail.saving") : t("common.save")}
         </button>
       </div>
 
@@ -461,7 +461,7 @@ function renderBindings(state: BindingState) {
         ? html`<div class="row" style="margin-top: 12px; gap: 12px;">
             <div class="muted">Load config to edit bindings.</div>
             <button class="btn" ?disabled=${state.configLoading} @click=${state.onLoadConfig}>
-              ${state.configLoading ? "Loading…" : "Load config"}
+              ${state.configLoading ? t("common.loading") : t("nodesDetail.loadConfig")}
             </button>
           </div>`
         : html`
@@ -528,7 +528,7 @@ function renderExecApprovals(state: ExecApprovalsState) {
           ?disabled=${state.disabled || !state.dirty || !targetReady}
           @click=${state.onSave}
         >
-          ${state.saving ? "Saving…" : "Save"}
+          ${state.saving ? t("nodesDetail.saving") : t("common.save")}
         </button>
       </div>
 
@@ -538,7 +538,7 @@ function renderExecApprovals(state: ExecApprovalsState) {
         ? html`<div class="row" style="margin-top: 12px; gap: 12px;">
             <div class="muted">Load exec approvals to edit allowlists.</div>
             <button class="btn" ?disabled=${state.loading || !targetReady} @click=${state.onLoad}>
-              ${state.loading ? "Loading…" : "Load approvals"}
+              ${state.loading ? t("common.loading") : t("nodesDetail.loadConfig")}
             </button>
           </div>`
         : html`
