@@ -120,7 +120,6 @@ export interface Translations {
     status: string;
     connected: string;
     disconnected: string;
-    configure: string;
   };
 
   // 日志
@@ -420,8 +419,6 @@ export const translations: Record<Locale, Translations> = {
       refresh: 'Refresh',
       enabled: 'Enabled',
       disabled: 'Disabled',
-      yes: 'Yes',
-      no: 'No',    configure: 'Configure',
     settings: 'Settings',
     close: 'Close',
     open: 'Open',
@@ -436,8 +433,6 @@ export const translations: Record<Locale, Translations> = {
     warning: 'Warning',
     info: 'Info',
     loading: 'Loading…',
-    yes: 'Yes',
-    no: 'No',
     install: 'Install',
     uninstall: 'Uninstall',
     enable: 'Enable',
@@ -519,7 +514,6 @@ export const translations: Record<Locale, Translations> = {
       disabled: 'Disabled',
       install: 'Install',
       uninstall: 'Uninstall',
-      configure: 'Configure',
     },
     channels: {
       title: 'Channels',
@@ -533,7 +527,6 @@ export const translations: Record<Locale, Translations> = {
       status: 'Status',
       connected: 'Connected',
       disconnected: 'Disconnected',
-      configure: 'Configure',
     },
     logs: {
       title: 'Logs',
@@ -807,9 +800,6 @@ export const translations: Record<Locale, Translations> = {
       refresh: '刷新',
       enabled: '已启用',
       disabled: '已禁用',
-      yes: '是',
-      no: '否',    configure: '配置',
-    settings: '设置',
     close: '关闭',
     open: '打开',
     view: '查看',
@@ -823,8 +813,6 @@ export const translations: Record<Locale, Translations> = {
     warning: '警告',
     info: '信息',
     loading: '加载中…',
-    yes: '是',
-    no: '否',
     install: '安装',
     uninstall: '卸载',
     enable: '启用',
@@ -906,7 +894,6 @@ export const translations: Record<Locale, Translations> = {
       disabled: '已禁用',
       install: '安装',
       uninstall: '卸载',
-      configure: '配置',
     },
     channels: {
       title: '渠道',
@@ -920,7 +907,6 @@ export const translations: Record<Locale, Translations> = {
       status: '状态',
       connected: '已连接',
       disconnected: '未连接',
-      configure: '配置',
     },
     logs: {
       title: '日志',
