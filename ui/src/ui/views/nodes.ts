@@ -1,6 +1,7 @@
 import { html, nothing } from "lit";
 
 import { clampText, formatAgo, formatList } from "../format";
+import { t } from "../../i18n";
 import type {
   ExecApprovalsAllowlistEntry,
   ExecApprovalsFile,

@@ -1,4 +1,5 @@
 import { html, nothing } from "lit";
+import { t } from "../../i18n";
 
 import { formatMs } from "../format";
 import {

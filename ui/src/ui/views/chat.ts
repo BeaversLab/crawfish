@@ -1,4 +1,5 @@
 import { html, nothing } from "lit";
+import { t } from "../../i18n";
 import { ref } from "lit/directives/ref.js";
 import { repeat } from "lit/directives/repeat.js";
 import type { SessionsListResult } from "../types";

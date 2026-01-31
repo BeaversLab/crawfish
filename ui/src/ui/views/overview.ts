@@ -1,4 +1,5 @@
 import { html } from "lit";
+import { t } from "../../i18n";
 
 import type { GatewayHelloOk } from "../gateway";
 import { formatAgo, formatDurationMs } from "../format";
