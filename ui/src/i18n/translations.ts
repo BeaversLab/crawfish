@@ -1,5 +1,5 @@
 // 翻译文件
-import type { Locale } from './locales';
+import { DEFAULT_LOCALE, type Locale } from './locales';
 
 export interface Translations {
   // 通用
@@ -430,3 +430,7 @@ export const translations: Record<Locale, Translations> = {
     },
   },
 };
+
+export function translate(locale: Locale): Translations {
+  return translations[locale] ?? translations[DEFAULT_LOCALE];
+}
