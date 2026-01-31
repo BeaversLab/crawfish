@@ -282,7 +282,7 @@ function deriveRunningStatus(account: ChannelAccountSnapshot): "Yes" | "No" | "A
   return "No";
 }
 
-function deriveConnectedStatus(account: ChannelAccountSnapshot): "Yes" | "No" | "Active" | t("common.notAvailable") {
+function deriveConnectedStatus(account: ChannelAccountSnapshot): "Yes" | "No" | "Active" | "n/a" {
   if (account.connected === true) return "Yes";
   if (account.connected === false) return "No";
   // If connected is null/undefined but we have recent activity, show as active
