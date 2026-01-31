@@ -4,6 +4,7 @@ import { repeat } from "lit/directives/repeat.js";
 import type { AppViewState } from "./app-view-state";
 import { iconForTab, pathForTab, titleForTab, type Tab } from "./navigation";
 import { icons } from "./icons";
+import { getTitleForTab } from "./i18n-helpers";
 import { loadChatHistory } from "./controllers/chat";
 import { refreshChat } from "./app-chat";
 import { syncUrlWithSessionKey } from "./app-settings";
@@ -31,10 +32,10 @@ export function renderTab(state: AppViewState, tab: Tab) {
         event.preventDefault();
         state.setTab(tab);
       }}
-      title=${titleForTab(tab)}
+      title=${getTitleForTab(tab, state.i18n.t)}
     >
       <span class="nav-item__icon" aria-hidden="true">${icons[iconForTab(tab)]}</span>
-      <span class="nav-item__text">${titleForTab(tab)}</span>
+      <span class="nav-item__text">${getTitleForTab(tab, state.i18n.t)}</span>
     </a>
   `;
 }
