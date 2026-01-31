@@ -81,7 +81,7 @@ export function renderChannels(props: ChannelsProps) {
           <div class="card-title">Channel health</div>
           <div class="card-sub">Channel status snapshots from the gateway.</div>
         </div>
-        <div class="muted">${props.lastSuccessAt ? formatAgo(props.lastSuccessAt) : "n/a"}</div>
+        <div class="muted">${props.lastSuccessAt ? formatAgo(props.lastSuccessAt) : t("common.notAvailable")}</div>
       </div>
       ${props.lastError
         ? html`<div class="callout danger" style="margin-top: 12px;">
@@ -89,7 +89,7 @@ export function renderChannels(props: ChannelsProps) {
           </div>`
         : nothing}
       <pre class="code-block" style="margin-top: 12px;">
-${props.snapshot ? JSON.stringify(props.snapshot, null, 2) : "No snapshot yet."}
+${props.snapshot ? JSON.stringify(props.snapshot, null, 2) : t("channels.noSnapshot")}
       </pre>
     </section>
   `;
@@ -229,15 +229,15 @@ function renderGenericChannelCard(
             <div class="status-list" style="margin-top: 16px;">
               <div>
                 <span class="label">Configured</span>
-                <span>${configured == null ? "n/a" : configured ? "Yes" : "No"}</span>
+                <span>${configured == null ? t("common.notAvailable") : configured ? "Yes" : "No"}</span>
               </div>
               <div>
                 <span class="label">Running</span>
-                <span>${running == null ? "n/a" : running ? "Yes" : "No"}</span>
+                <span>${running == null ? t("common.notAvailable") : running ? "Yes" : "No"}</span>
               </div>
               <div>
                 <span class="label">Connected</span>
-                <span>${connected == null ? "n/a" : connected ? "Yes" : "No"}</span>
+                <span>${connected == null ? t("common.notAvailable") : connected ? "Yes" : "No"}</span>
               </div>
             </div>
           `}
@@ -282,12 +282,12 @@ function deriveRunningStatus(account: ChannelAccountSnapshot): "Yes" | "No" | "A
   return "No";
 }
 
-function deriveConnectedStatus(account: ChannelAccountSnapshot): "Yes" | "No" | "Active" | "n/a" {
+function deriveConnectedStatus(account: ChannelAccountSnapshot): "Yes" | "No" | "Active" | t("common.notAvailable") {
   if (account.connected === true) return "Yes";
   if (account.connected === false) return "No";
   // If connected is null/undefined but we have recent activity, show as active
   if (hasRecentActivity(account)) return "Active";
-  return "n/a";
+  return t("common.notAvailable");
 }
 
 function renderGenericAccount(account: ChannelAccountSnapshot) {
@@ -315,7 +315,7 @@ function renderGenericAccount(account: ChannelAccountSnapshot) {
         </div>
         <div>
           <span class="label">Last inbound</span>
-          <span>${account.lastInboundAt ? formatAgo(account.lastInboundAt) : "n/a"}</span>
+          <span>${account.lastInboundAt ? formatAgo(account.lastInboundAt) : t("common.notAvailable")}</span>
         </div>
         ${account.lastError
           ? html`
