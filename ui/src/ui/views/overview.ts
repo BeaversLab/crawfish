@@ -231,8 +231,8 @@ export function renderOverview(props: OverviewProps) {
           ${props.cronEnabled == null
             ? "n/a"
             : props.cronEnabled
-              ? "Enabled"
-              : "Disabled"}
+              ? t("common.enabled")
+              : t("common.disabled")}
         </div>
         <div class="muted">Next wake ${formatNextRun(props.cronNext)}</div>
       </div>

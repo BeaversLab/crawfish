@@ -41,7 +41,7 @@ export function renderSkills(props: SkillsProps) {
           <div class="card-sub">${t("skillsDetail.bundedManagedWorkspace")}</div>
         </div>
         <button class="btn" ?disabled=${props.loading} @click=${props.onRefresh}>
-          ${props.loading ? "Loading…" : t("common.refresh")}
+          ${props.loading ? t("common.loading") : t("common.refresh")}
         </button>
       </div>
 
