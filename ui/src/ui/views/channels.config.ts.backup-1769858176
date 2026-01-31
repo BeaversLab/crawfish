@@ -120,7 +120,7 @@ export function renderChannelConfigSection(params: {
           ?disabled=${disabled || !props.configFormDirty}
           @click=${() => props.onConfigSave()}
         >
-          ${props.configSaving ? "Saving…" : t("common.save")}
+          ${props.configSaving ? "Saving…" : "Save"}
         </button>
         <button
           class="btn"
