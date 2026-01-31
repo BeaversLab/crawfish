@@ -15,7 +15,7 @@ export function t(key: string, params?: Record<string, string>): string {
   // 从 localStorage 读取当前语言
   const storageKey = 'openclaw-locale';
   const stored = localStorage.getItem(storageKey);
-  const locale = (stored && (stored === 'en' || stored === 'zh-CN')) ? stored : DEFAULT_LOCALE;
+  const locale = (stored && (stored === 'en' || stored === 'zh')) ? stored : DEFAULT_LOCALE;
   
   // 获取对应语言的翻译
   const translationsMap = translations[locale];
@@ -48,5 +48,5 @@ export function t(key: string, params?: Record<string, string>): string {
 export function getCurrentLocale(): string {
   const storageKey = 'openclaw-locale';
   const stored = localStorage.getItem(storageKey);
-  return (stored && (stored === 'en' || stored === 'zh-CN')) ? stored : DEFAULT_LOCALE;
+  return (stored && (stored === 'en' || stored === 'zh')) ? stored : DEFAULT_LOCALE;
 }
