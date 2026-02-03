@@ -1,0 +1,61 @@
+FROM node:22-slim AS build
+
+ARG OPENCLAW_DOCKER_APT_PACKAGES=""
+ARG OPENCLAW_CONTROL_UI_DIR="i18n-ui"
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    curl \
+    g++ \
+    git \
+    make \
+    pkg-config \
+    python3 \
+    unzip \
+  && rm -rf /var/lib/apt/lists/*
+
+# Install Bun (required for build scripts)
+RUN curl -fsSL https://bun.sh/install | bash
+ENV PATH="/root/.bun/bin:${PATH}"
+
+RUN corepack enable
+
+WORKDIR /app
+
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
+COPY ui/package.json ./ui/package.json
+COPY i18n-ui/package.json ./i18n-ui/package.json
+COPY patches ./patches
+COPY scripts ./scripts
+
+RUN pnpm install --frozen-lockfile
+
+COPY . .
+RUN OPENCLAW_A2UI_SKIP_MISSING=1 pnpm build
+RUN pnpm --dir "${OPENCLAW_CONTROL_UI_DIR}" build
+
+RUN CI=true pnpm prune --prod
+
+FROM node:22-slim AS runtime
+
+ENV NODE_ENV=production
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Keep runtime surface small: only ship what we execute/use.
+COPY --from=build /app/package.json ./package.json
+COPY --from=build --chown=node:node /app/dist ./dist
+COPY --from=build --chown=node:node /app/node_modules ./node_modules
+COPY --from=build --chown=node:node /app/skills ./skills
+
+USER node
+
+CMD ["node", "dist/index.js", "gateway", "--allow-unconfigured"]

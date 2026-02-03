@@ -1,6 +1,7 @@
 packages:
   - .
   - ui
+  - i18n-ui
   - packages/*
   - extensions/*
 
