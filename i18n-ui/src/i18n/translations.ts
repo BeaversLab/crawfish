@@ -62,6 +62,7 @@ export interface Translations {
   nav: {
     overview: string;
     chat: string;
+    agents: string;
     config: string;
     sessions: string;
     skills: string;
@@ -580,6 +581,7 @@ export const translations: Record<Locale, Translations> = {
     nav: {
       overview: 'Overview',
       chat: 'Chat',
+      agents: 'Agents',
       config: 'Config',
       sessions: 'Sessions',
       skills: 'Skills',
@@ -1059,6 +1061,7 @@ export const translations: Record<Locale, Translations> = {
     nav: {
       overview: '概览',
       chat: '聊天',
+      agents: '代理',
       config: '配置',
       sessions: '会话',
       skills: '技能',

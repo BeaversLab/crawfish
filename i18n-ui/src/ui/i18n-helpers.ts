@@ -7,6 +7,7 @@ import type { Translations } from '../i18n/translations';
 export function getTitleForTab(tab: string, t: Translations): string {
   const titles: Record<string, keyof Translations['nav']> = {
     overview: 'overview',
+    agents: 'agents',
     channels: 'channels',
     instances: 'nodes', // mapping instances -> nodes? Wait, instances tab is "instances" in translations.
     sessions: 'sessions',
